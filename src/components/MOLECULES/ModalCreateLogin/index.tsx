@@ -19,10 +19,16 @@ export function ModalCreateLogin() {
       </div>
       <form>
         <InputMaterial
-          placeholder={"Digite o seu e-mail"}
-          type={"email"}
-          label={"E-mail"}
-          id={"email_create"}
+          placeholder={"Digite o seu nome"}
+          type={"text"}
+          label={"Nome"}
+          id={"nome_create"}
+        />
+        <InputMaterial
+          placeholder={"Digite o seu sobrenome"}
+          type={"text"}
+          label={"Sobrenome"}
+          id={"sobrenome_create"}
         />
         <InputMaterial
           placeholder={"Digite seu CNPJ"}

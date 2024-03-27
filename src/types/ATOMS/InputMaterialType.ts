@@ -1,4 +1,4 @@
-import { HTMLAttributes, HTMLInputTypeAttribute } from "react"
+import { ChangeEventHandler, HTMLAttributes, HTMLInputTypeAttribute } from "react"
 
 export interface TInputMaterial {
     placeholder:string
@@ -6,6 +6,9 @@ export interface TInputMaterial {
     label:string
     id:string
     isAutoComplete?:string
+    onChange?: ChangeEventHandler<HTMLInputElement>
+    value?: string
+    register?:any
     
     
 }

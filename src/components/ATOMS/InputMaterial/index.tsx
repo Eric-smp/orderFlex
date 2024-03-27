@@ -7,6 +7,9 @@ export function InputMaterial({
   label,
   id,
   isAutoComplete,
+  onChange,
+  value,
+  register,
 }: TInputMaterial) {
   return (
     <Styles.DivElement>
@@ -14,11 +17,16 @@ export function InputMaterial({
         <h5>{label}</h5>
       </Styles.LabelInput>
       <Styles.InputElement
+        label=""
         placeholder={placeholder}
         type={type}
         id={id}
         autoComplete="off"
         name={id}
+        onChange={onChange}
+        value={value}
+        register={register}
+        {...register}
       />
     </Styles.DivElement>
   );

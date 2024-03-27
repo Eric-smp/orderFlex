@@ -1,12 +1,12 @@
 import styled from "styled-components";
-
+import { TInputMaterial } from "@/types";
 export const DivElement = styled.div`
   width: auto;
   height: auto;
   position: relative;
 `;
 
-export const InputElement = styled.input`
+export const InputElement = styled.input<TInputMaterial>`
   width: 15rem;
   height: 2.5rem;
   padding: 1rem;
