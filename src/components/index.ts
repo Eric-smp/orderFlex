@@ -2,6 +2,7 @@
 export * from './ATOMS/InputMaterial'
 export * from './ATOMS/Button'
 export * from './ATOMS/Modal'
+export * from './ATOMS/MaterialInputMask'
 //MOLECULES
 export * from './MOLECULES/FormLogin'
 export * from './MOLECULES/ModalCreateLogin'
@@ -15,4 +16,4 @@ export * from './ORGANISMS/BodyLogin'
 export * from './ORGANISMS/BodyHome'
 //TEMPLATE
 export * from './TEMPLATE/DashbordLogin'
-export * from './TEMPLATE/DrashbordHome'
+export * from './TEMPLATE/DashbordHome'

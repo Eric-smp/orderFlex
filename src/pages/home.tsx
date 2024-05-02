@@ -1,8 +1,8 @@
-import { DashbordLogin } from "@/components";
+import { DrashbordHome } from "@/components";
 export default function Home() {
   return (
     <div>
-      <DashbordLogin />
+      <DrashbordHome />
     </div>
   );
 }

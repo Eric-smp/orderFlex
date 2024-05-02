@@ -12,7 +12,7 @@ export function NavegationHeader() {
         text={"sair"}
         color="#f7ad00"
         width="8rem"
-        onClick={() => router.push("/login")}
+        onClick={() => router.push("/")}
       />
     </Styles.NavHeader>
   );

@@ -7,6 +7,13 @@ export const ContentBody = styled.div`
   display: flex;
   gap: 1rem;
 
+  @media only screen and (min-width: 1440px) {
+    max-width: 90rem;
+    margin: auto;
+    border-right: 1px solid #f7ad00;
+    border-left: 1px solid #f7ad00;
+  }
+
   .saveOrders {
     width: 100%;
     height: auto;

@@ -6,7 +6,7 @@ export function InputMaterial({
   type,
   label,
   id,
-  isAutoComplete,
+  autoComplete,
   onChange,
   value,
   register,
@@ -21,7 +21,7 @@ export function InputMaterial({
         placeholder={placeholder}
         type={type}
         id={id}
-        autoComplete="off"
+        autoComplete={autoComplete}
         name={id}
         onChange={onChange}
         value={value}

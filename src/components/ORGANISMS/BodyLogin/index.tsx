@@ -9,8 +9,8 @@ export function BodyLogin() {
       <div className="ContentIntroductionProduct">
         <div className="contentCard">
           <h1>
-            Com o OrderFlex fica mais fácil de organizar seus produtos e anotar
-            pedidos dos clientes
+            Com o OrderFlex, uma ferramenta para controle de vendas, fica muito
+            mais fácil de organizar os pedidos dos seus clientes
           </h1>
           <h2>
             Entre com sua conta. Caso não tenha{" "}

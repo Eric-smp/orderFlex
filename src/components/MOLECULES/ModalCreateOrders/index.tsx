@@ -48,15 +48,14 @@ export function ModalCreateOrders() {
         </span>
         <h1>Criando pedido</h1>
       </header>
-      <form onSubmit={handleSubmit(testeFomr)}>
+      <form>
         <InputMaterial
           placeholder={"Digite o nome do cliente"}
           type={"text"}
           label={""}
           id={""}
-          register={register("nome")}
-          value=""
-          // onChange={(e) => setClientName(e.target.value)}
+          autoComplete="off"
+          onChange={(e) => setClientName(e.target.value)}
         />
         {[...Array(divCount)].map((_, index) => (
           <div key={index} className="inputOrder">
@@ -65,8 +64,9 @@ export function ModalCreateOrders() {
               type={"string"}
               label={""}
               id={""}
-              value={inputValues[index]}
-              onChange={(e) => handleInputChange(index, e.target.value)}
+              // value={inputValues[index]}
+              // onChange={(e) => handleInputChange(index, e.target.value)}
+              autoComplete="off"
             />
             {index === divCount - 1 && <span onClick={handleAddDiv}>+</span>}
           </div>

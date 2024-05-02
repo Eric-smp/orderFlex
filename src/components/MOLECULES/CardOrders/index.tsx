@@ -7,12 +7,12 @@ export function CardOrders() {
   const teste = testeFomr;
   return (
     <Styles.ContentOrder>
-      <h3>Nome do cliente</h3>
+      <h2>Nome do cliente</h2>
       <div>
-        <p>
+        <h3>
           pedido
           {/* Pedido anotados no input */}
-        </p>
+        </h3>
       </div>
     </Styles.ContentOrder>
   );

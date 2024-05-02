@@ -22,13 +22,13 @@ export const ContentBodyLogin = styled.div`
     gap: 3rem;
     padding: 3rem 5rem 3rem 5rem;
     .ContentIntroductionProduct {
-      height: 100%;
+      height: auto;
       width: 50%;
       background-color: #f7ad00;
       border-radius: 15px;
       display: flex;
       align-items: center;
-      padding: 3rem;
+      padding: 5rem 3rem;
       color: #f5f2f2;
       .contentCard {
         display: flex;

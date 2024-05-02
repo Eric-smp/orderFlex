@@ -5,10 +5,11 @@ export interface TInputMaterial {
     type:HTMLInputTypeAttribute
     label:string
     id:string
-    isAutoComplete?:string
     onChange?: ChangeEventHandler<HTMLInputElement>
     value?: string
     register?:any
+    autoComplete:HTMLInputTypeAttribute
+
     
     
 }

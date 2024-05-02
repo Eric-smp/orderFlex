@@ -1,5 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { InputMaterial, Button } from "@/components";
+import { InputMaterial, Button, MaterialInputMask } from "@/components";
 import * as Styles from "./styles";
 import { useGlobal } from "@/hooks/context/global";
 import { useRouter } from "next/router";
@@ -16,14 +16,14 @@ export function FormLogin() {
           type={"text"}
           label={"CNPJ"}
           id={"cnpj"}
-          isAutoComplete="off"
+          autoComplete="off"
         />
         <InputMaterial
           placeholder={"Digite a sua senha"}
           type={"password"}
           label={"Senha"}
           id={"password"}
-          isAutoComplete="off"
+          autoComplete="off"
         />
 
         <Button
@@ -31,7 +31,7 @@ export function FormLogin() {
           type="button"
           backgroundColor={"#f7ad00"}
           color={"#f5f2f2 "}
-          onClick={() => route.push("/")}
+          onClick={() => route.push("/home")}
         />
       </form>
       <div className="footerCarLogin">
