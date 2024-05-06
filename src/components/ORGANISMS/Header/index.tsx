@@ -7,7 +7,7 @@ export function Header({ isNavegation }: TNavegation) {
   if (isNavegation) {
     return (
       <Styles.HeaderContentNav>
-        <h1>OrderFlex</h1>
+        <h1>OrderFlex </h1>
         <div>
           <NavegationHeader />
         </div>
@@ -16,7 +16,7 @@ export function Header({ isNavegation }: TNavegation) {
   } else {
     return (
       <Styles.HeaderContent>
-        <h1>OrderFlex</h1>
+        <h1>OrderFlex </h1>
       </Styles.HeaderContent>
     );
   }

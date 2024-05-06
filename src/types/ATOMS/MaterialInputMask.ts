@@ -1,8 +1,8 @@
 import { ChangeEventHandler, HTMLInputTypeAttribute, ReactNode } from "react"
 
 export interface TMaterialInputMask{
-  width:string
-  heigth:string
+  width?:string
+  heigth?:string
   placeholder:string,
   label: string
   type:HTMLInputTypeAttribute
@@ -18,7 +18,7 @@ export interface TMaterialInputMask{
   rightSideIcon?: ReactNode
   defaultValue?: any
   disabled?: boolean
-  maskPattern: string
+  maskPattern?: string
   error?: string | null
   value?: any
   onBlur?: (event: any) => any

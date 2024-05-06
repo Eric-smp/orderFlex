@@ -10,6 +10,8 @@ export function InputMaterial({
   onChange,
   value,
   register,
+  error,
+  messageError,
 }: TInputMaterial) {
   return (
     <Styles.DivElement>
@@ -26,8 +28,15 @@ export function InputMaterial({
         onChange={onChange}
         value={value}
         register={register}
+        error={error}
+        messageError={messageError}
         {...register}
       />
+      {error ? (
+        <Styles.MessageError>
+          <p>{messageError}</p>
+        </Styles.MessageError>
+      ) : null}
     </Styles.DivElement>
   );
 }

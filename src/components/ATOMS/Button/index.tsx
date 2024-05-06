@@ -9,6 +9,7 @@ export function Button({
   height,
   width,
   onClick,
+  disabled,
 }: TButton) {
   return (
     <Styles.ButtonElement
@@ -19,6 +20,7 @@ export function Button({
       onClick={onClick}
       width={width}
       height={height}
+      disabled={disabled}
     >
       <h3>{text}</h3>
     </Styles.ButtonElement>

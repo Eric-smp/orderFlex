@@ -3,6 +3,7 @@ export * from './ATOMS/InputMaterial'
 export * from './ATOMS/Button'
 export * from './ATOMS/Modal'
 export * from './ATOMS/MaterialInputMask'
+export * from './ATOMS/CardPasswordError'
 //MOLECULES
 export * from './MOLECULES/FormLogin'
 export * from './MOLECULES/ModalCreateLogin'

@@ -8,4 +8,5 @@ export type TButton = {
     backgroundColor:string
     color:string
     onClick?:MouseEventHandler<HTMLButtonElement>
+    disabled?: boolean
 }

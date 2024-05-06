@@ -9,7 +9,8 @@ export interface TInputMaterial {
     value?: string
     register?:any
     autoComplete:HTMLInputTypeAttribute
-
+    error?: boolean
+    messageError?:string
     
     
 }

@@ -14,13 +14,13 @@ export function BodyLogin() {
           </h1>
           <h2>
             Entre com sua conta. Caso não tenha{" "}
-            <a
+            <p
               onClick={() => {
                 setIsModalOpen("visible"), setModalType(0);
               }}
             >
               Clique aqui!
-            </a>
+            </p>
           </h2>
         </div>
       </div>

@@ -7,7 +7,15 @@ import {
   useMemo,
   useCallback,
 } from "react";
-import { ChildrenType, TCreateOders, TGlobalProps } from "@/types";
+import {
+  ChildrenType,
+  TCreateOders,
+  TGlobalProps,
+  TCreateLogin,
+  TLoginCoung,
+} from "@/types";
+import Axios from "axios";
+import { useRouter } from "next/router";
 
 export const initialState: TGlobalProps = {
   isModalOpen: "hidden",
@@ -15,13 +23,19 @@ export const initialState: TGlobalProps = {
   modalType: 0,
   setModalType: () => {},
   testeFomr: () => {},
+  handlePostUser: () => {},
+  loginCount: () => {},
 };
 
 const GlobalContext = createContext<TGlobalProps>(initialState);
 
 function GlobalProvider({ children }: ChildrenType) {
+  const route = useRouter();
+
   const [isModalOpen, setIsModalOpen] = useState<string>("hidden");
   const [modalType, setModalType] = useState<number>(0);
+
+  console.log("modalType", isModalOpen);
 
   const testeFomr = useCallback(({ nome, pedido }: TCreateOders) => {
     const params = {
@@ -39,6 +53,54 @@ function GlobalProvider({ children }: ChildrenType) {
     }
   }, []);
 
+  const handlePostUser = useCallback(
+    async ({ name, cnpj, username, password }: TCreateLogin) => {
+      const url = "./api/CreateUser/loginUser";
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const params = {
+        name,
+        cnpj,
+        password,
+        username,
+      };
+
+      try {
+        await Axios.post(url, params, config);
+        setIsModalOpen("hidden");
+        console.log("Deu BOM");
+      } catch (error) {
+        console.log("Deu ruim");
+      }
+    },
+    []
+  );
+
+  const loginCount = useCallback(async ({ cnpj, senha }: TLoginCoung) => {
+    const url = "./api/CreateUser/verifyLogin";
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const params = {
+      cnpj,
+      senha,
+    };
+
+    try {
+      await Axios.post(url, params, config);
+      route.push("/home");
+    } catch (error) {
+      console.log("Deu erro");
+    }
+  }, []);
+
   useEffect(() => {}, [isModalOpen, modalType]);
   const value = useMemo(
     () => ({
@@ -47,9 +109,11 @@ function GlobalProvider({ children }: ChildrenType) {
       modalType,
       setModalType,
       testeFomr,
+      handlePostUser,
+      loginCount,
     }),
 
-    [isModalOpen, modalType, testeFomr]
+    [isModalOpen, modalType, testeFomr, handlePostUser, loginCount]
   );
 
   return (

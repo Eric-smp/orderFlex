@@ -24,10 +24,14 @@ export const ContentForm = styled.div`
   .footerCarLogin {
     margin-top: 1rem;
     h3 {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
       font-size: 0.9rem;
       font-weight: normal;
 
-      a {
+      p {
         font-style: italic;
         text-decoration: underline;
         color: #551a8b;

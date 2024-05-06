@@ -30,6 +30,7 @@ export const ContentBodyLogin = styled.div`
       align-items: center;
       padding: 5rem 3rem;
       color: #f5f2f2;
+
       .contentCard {
         display: flex;
         flex-wrap: wrap;
@@ -41,11 +42,13 @@ export const ContentBodyLogin = styled.div`
             "Lucida Sans", Arial, sans-serif;
         }
         h2 {
+          display: flex;
+          gap: 0.5rem;
           font-size: 1.25rem;
           font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
             "Lucida Sans", Arial, sans-serif;
 
-          a {
+          p {
             cursor: pointer;
             font-style: italic;
             text-decoration: underline;

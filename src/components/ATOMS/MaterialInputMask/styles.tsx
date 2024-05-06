@@ -6,9 +6,9 @@ interface TLabel {
 }
 export const ElementDivInput = styled.div<TMaterialInputMask>`
   position: relative;
-  display: flex;
-  align-items: center;
+
   width: ${({ width }) => width};
+  height: 3.5rem;
 
   input {
     outline: none;
@@ -16,15 +16,12 @@ export const ElementDivInput = styled.div<TMaterialInputMask>`
     width: ${({ width }) => width || "15rem"};
     height: ${({ heigth }) => heigth || "2.5rem"};
     border-radius: 10px;
-    border: 2px solid #0d5bd1;
-    border-radius: 0.5rem;
+    border: 2px solid #f7ad00;
+    border-radius: 5px;
     background-color: ${({ backgroundColor }) =>
       backgroundColor || "transparent"};
 
     outline: none;
-    &::placeholder {
-      color: #ccc;
-    }
   }
 `;
 
@@ -33,7 +30,7 @@ export const LabelInput = styled.label<TLabel>`
   font-size: 1rem;
   left: 0.8rem;
   top: -0.5rem;
-  background-color: ${({ backgroundLabel }) => backgroundLabel || "#f5f5f5"};
+  background-color: ${({ backgroundLabel }) => backgroundLabel || "#f5f2f2"};
   display: flex;
   align-items: center;
   padding: 0rem 0.5rem;

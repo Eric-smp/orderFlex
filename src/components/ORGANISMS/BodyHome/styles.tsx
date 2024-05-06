@@ -8,7 +8,7 @@ export const ContentBody = styled.div`
   gap: 1rem;
 
   @media only screen and (min-width: 1440px) {
-    max-width: 90rem;
+    max-width: 85rem;
     margin: auto;
     border-right: 1px solid #f7ad00;
     border-left: 1px solid #f7ad00;
