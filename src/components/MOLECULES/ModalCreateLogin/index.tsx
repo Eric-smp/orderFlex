@@ -16,6 +16,12 @@ export function ModalCreateLogin() {
   const [disabledButton, setDisabledButton] = useState(true);
   const [messageError, setMessageError] = useState(false);
   const [stateIcon, setStateIcon] = useState(false);
+
+  const [caracter, setCaracter] = useState(false);
+  const [maiuscula, setMaiuscula] = useState(false);
+  const [numero, setNumero] = useState(false);
+  const [quantidade, setQuantidade] = useState(false);
+
   const { setIsModalOpen, handlePostUser } = useGlobal();
   const {
     register,
@@ -53,6 +59,42 @@ export function ModalCreateLogin() {
       setMessageError(false);
     }
   }, [watchPassword]);
+
+  useEffect(() => {
+    const maiuscula = /[A-Z]/.test(watchPassword);
+    const caracterEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(watchPassword);
+    const contemNumero = /\d/.test(watchPassword);
+
+    if (maiuscula) {
+      setMaiuscula(true);
+    } else {
+      setMaiuscula(false);
+    }
+
+    if (caracterEspecial) {
+      setCaracter(true);
+    } else {
+      setCaracter(false);
+    }
+
+    if (contemNumero) {
+      setNumero(true);
+    } else {
+      setNumero(false);
+    }
+
+    if (watchPassword && watchPassword.length > 6) {
+      setQuantidade(true);
+    } else {
+      setQuantidade(false);
+    }
+
+    if (maiuscula && caracterEspecial && contemNumero && quantidade) {
+      setMessageError(true);
+    } else {
+      setMessageError(true);
+    }
+  }, [quantidade, watchPassword]);
   return (
     <Styles.WrapperModal>
       <div className="headerModal">
@@ -107,7 +149,14 @@ export function ModalCreateLogin() {
             )
           }
         />
-        {messageError ? <CardPasswordError /> : null}
+        {messageError ? (
+          <CardPasswordError
+            maiuscula={maiuscula}
+            especial={caracter}
+            numero={numero}
+            minimo={quantidade}
+          />
+        ) : null}
 
         <Button
           text={"Criar Conta"}

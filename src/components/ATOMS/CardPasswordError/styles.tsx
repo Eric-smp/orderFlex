@@ -5,6 +5,7 @@ export const CardPassword = styled.div`
   height: auto;
   /* padding: 1rem; */
   background-color: #d6d6d6;
+  padding: 0.5rem 0.5rem;
 
   ul {
     display: flex;

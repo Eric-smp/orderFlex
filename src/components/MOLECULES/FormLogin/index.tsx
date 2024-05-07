@@ -5,7 +5,7 @@ import { useGlobal } from "@/hooks/context/global";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { TLoginCoung } from "@/types";
-import { useEffect, useState } from "react";
+import { ChangeEvent, ReactHTML, useEffect, useState } from "react";
 import { VisibilityOff, Visibility } from "@mui/icons-material";
 
 export function FormLogin() {

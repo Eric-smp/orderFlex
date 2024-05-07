@@ -1,11 +1,11 @@
 import { ChangeEventHandler, HTMLAttributes, HTMLInputTypeAttribute, ReactNode } from "react"
 
-export interface TInputMaterial {
+export type TInputMaterial = {
     placeholder:string
     type:HTMLInputTypeAttribute
     label:string
     id:string
-    onChange?: ChangeEventHandler<HTMLInputElement>
+    
     value?: string
     register?:any
     autoComplete:HTMLInputTypeAttribute
@@ -14,4 +14,4 @@ export interface TInputMaterial {
     prefixIcon?: ReactNode
     
     
-}
+} & React.HTMLProps<HTMLInputElement>
