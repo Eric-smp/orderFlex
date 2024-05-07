@@ -25,6 +25,8 @@ export const initialState: TGlobalProps = {
   testeFomr: () => {},
   handlePostUser: () => {},
   loginCount: () => {},
+  notification: false,
+  setNotification: () => {},
 };
 
 const GlobalContext = createContext<TGlobalProps>(initialState);
@@ -34,6 +36,7 @@ function GlobalProvider({ children }: ChildrenType) {
 
   const [isModalOpen, setIsModalOpen] = useState<string>("hidden");
   const [modalType, setModalType] = useState<number>(0);
+  const [notification, setNotification] = useState(false);
 
   console.log("modalType", isModalOpen);
 
@@ -72,9 +75,9 @@ function GlobalProvider({ children }: ChildrenType) {
       try {
         await Axios.post(url, params, config);
         setIsModalOpen("hidden");
-        console.log("Deu BOM");
+        setNotification(true);
       } catch (error) {
-        console.log("Deu ruim");
+        console.log(error);
       }
     },
     []
@@ -111,9 +114,18 @@ function GlobalProvider({ children }: ChildrenType) {
       testeFomr,
       handlePostUser,
       loginCount,
+      notification,
+      setNotification,
     }),
 
-    [isModalOpen, modalType, testeFomr, handlePostUser, loginCount]
+    [
+      isModalOpen,
+      modalType,
+      testeFomr,
+      handlePostUser,
+      loginCount,
+      notification,
+    ]
   );
 
   return (

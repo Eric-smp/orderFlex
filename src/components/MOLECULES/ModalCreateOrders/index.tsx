@@ -68,7 +68,11 @@ export function ModalCreateOrders() {
               // onChange={(e) => handleInputChange(index, e.target.value)}
               autoComplete="off"
             />
-            {index === divCount - 1 && <span onClick={handleAddDiv}>+</span>}
+            {index === divCount - 1 && (
+              <span className="addOrder" onClick={handleAddDiv}>
+                +
+              </span>
+            )}
           </div>
         ))}
         <footer>

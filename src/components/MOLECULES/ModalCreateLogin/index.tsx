@@ -10,10 +10,12 @@ import * as Styles from "./styles";
 import { useGlobal } from "@/hooks/context/global";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
+import { VisibilityOff, Visibility } from "@mui/icons-material";
 
 export function ModalCreateLogin() {
   const [disabledButton, setDisabledButton] = useState(true);
   const [messageError, setMessageError] = useState(false);
+  const [stateIcon, setStateIcon] = useState(false);
   const { setIsModalOpen, handlePostUser } = useGlobal();
   const {
     register,
@@ -93,10 +95,17 @@ export function ModalCreateLogin() {
           register={register("password")}
           autoComplete="new-password"
           placeholder={"Digite uma senha"}
-          type={"password"}
+          type={stateIcon ? "text" : "password"}
           label={"Senha"}
           id={"password_create"}
           error={messageError}
+          prefixIcon={
+            stateIcon ? (
+              <VisibilityOff onClick={() => setStateIcon(false)} />
+            ) : (
+              <Visibility onClick={() => setStateIcon(true)} />
+            )
+          }
         />
         {messageError ? <CardPasswordError /> : null}
 

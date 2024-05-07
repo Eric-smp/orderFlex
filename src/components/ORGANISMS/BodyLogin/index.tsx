@@ -1,4 +1,4 @@
-import { FormLogin } from "@/components";
+import { FormLogin, CardNotification } from "@/components";
 import * as Styles from "./styles";
 import { useGlobal } from "@/hooks/context/global";
 

@@ -4,6 +4,7 @@ export * from './ATOMS/Button'
 export * from './ATOMS/Modal'
 export * from './ATOMS/MaterialInputMask'
 export * from './ATOMS/CardPasswordError'
+export * from './ATOMS/CardNotification'
 //MOLECULES
 export * from './MOLECULES/FormLogin'
 export * from './MOLECULES/ModalCreateLogin'

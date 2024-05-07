@@ -12,6 +12,7 @@ export function InputMaterial({
   register,
   error,
   messageError,
+  prefixIcon,
 }: TInputMaterial) {
   return (
     <Styles.DivElement>
@@ -32,6 +33,7 @@ export function InputMaterial({
         messageError={messageError}
         {...register}
       />
+      <span className="prefixIcon">{prefixIcon}</span>
       {error ? (
         <Styles.MessageError>
           <p>{messageError}</p>

@@ -37,7 +37,7 @@ export const ContentModal = styled.div`
       align-items: center;
       gap: 1rem;
 
-      span {
+      .addOrder {
         width: 30px;
         height: 30px;
         background-color: #f7ad00;

@@ -6,9 +6,11 @@ import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { TLoginCoung } from "@/types";
 import { useEffect, useState } from "react";
+import { VisibilityOff, Visibility } from "@mui/icons-material";
 
 export function FormLogin() {
   const [disabledButton, setDisabledButton] = useState(true);
+  const [iconInput, setIconInput] = useState(false);
   const { setIsModalOpen, setModalType, loginCount } = useGlobal();
   const {
     register,
@@ -48,10 +50,17 @@ export function FormLogin() {
         <InputMaterial
           register={register("senha")}
           placeholder={"Digite a sua senha"}
-          type={"password"}
+          type={iconInput ? "text" : "password"}
           label={"Senha"}
           id={"password"}
           autoComplete="new-password"
+          prefixIcon={
+            iconInput ? (
+              <VisibilityOff onClick={() => setIconInput(false)} />
+            ) : (
+              <Visibility onClick={() => setIconInput(true)} />
+            )
+          }
         />
 
         <Button

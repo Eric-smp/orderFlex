@@ -8,6 +8,8 @@ export interface TGlobalProps{
     testeFomr: ({nome, pedido}:TCreateOders) => void
     handlePostUser: ({name, username,cnpj,password}:TCreateLogin) => void
     loginCount: ({cnpj, senha}:TLoginCoung) => void
+    notification:boolean
+    setNotification:Dispatch<SetStateAction<boolean>>
     
 
 }

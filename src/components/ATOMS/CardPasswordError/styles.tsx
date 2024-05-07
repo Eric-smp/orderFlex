@@ -15,6 +15,18 @@ export const CardPassword = styled.div`
       gap: 0.5rem;
       align-items: center;
 
+      .iconCheck {
+        border-radius: 50%;
+        background-color: #10c227;
+        color: #fff;
+      }
+
+      .iconError {
+        border-radius: 50%;
+        background-color: red;
+        color: #fff;
+      }
+
       h4 {
         font-size: 0.8rem;
         text-decoration: none;

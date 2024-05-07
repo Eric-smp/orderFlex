@@ -7,6 +7,12 @@ export const DivElement = styled.div`
   width: auto;
   height: 3.5rem;
   position: relative;
+
+  .prefixIcon {
+    top: 8px;
+    right: 10px;
+    position: absolute;
+  }
 `;
 
 export const InputElement = styled.input<TInputMaterial>`

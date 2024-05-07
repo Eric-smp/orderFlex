@@ -1,4 +1,4 @@
-import { ChangeEventHandler, HTMLAttributes, HTMLInputTypeAttribute } from "react"
+import { ChangeEventHandler, HTMLAttributes, HTMLInputTypeAttribute, ReactNode } from "react"
 
 export interface TInputMaterial {
     placeholder:string
@@ -11,6 +11,7 @@ export interface TInputMaterial {
     autoComplete:HTMLInputTypeAttribute
     error?: boolean
     messageError?:string
+    prefixIcon?: ReactNode
     
     
 }

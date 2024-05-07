@@ -1,4 +1,4 @@
-import { Header, BodyLogin, Modal } from "@/components";
+import { Header, BodyLogin, Modal, CardNotification } from "@/components";
 import * as Styles from "./styles";
 
 export function DashbordLogin() {
@@ -7,6 +7,7 @@ export function DashbordLogin() {
       <Modal />
       <Header />
       <BodyLogin />
+      <CardNotification />
     </Styles.WrapperLogin>
   );
 }
