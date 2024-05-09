@@ -5,7 +5,7 @@ export interface TGlobalProps{
     setModalType:Dispatch<SetStateAction<number>>
     isModalOpen: string
     setIsModalOpen:Dispatch<SetStateAction<string>>
-    testeFomr: ({nome, pedido}:TCreateOders) => void
+    
     handlePostUser: ({name, username,cnpj,password}:TCreateLogin) => void
     loginCount: ({cnpj, senha}:TLoginCoung) => void
     notification:boolean

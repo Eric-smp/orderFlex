@@ -12,6 +12,7 @@ export * from './MOLECULES/NavegationHeader'
 export * from './MOLECULES/NoteCard'
 export * from './MOLECULES/ModalCreateOrders'
 export * from './MOLECULES/CardOrders'
+export * from './MOLECULES/ModalError'
 //ORGANISMS
 export * from './ORGANISMS/Header'
 export * from './ORGANISMS/BodyLogin'

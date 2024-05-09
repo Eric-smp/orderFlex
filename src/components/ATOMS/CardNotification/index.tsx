@@ -13,9 +13,9 @@ export function CardNotification() {
           </span>
 
           <h2>Conta criada com sucesso</h2>
-          <span className="closeCard">
+          {/* <span className="closeCard">
             <Close htmlColor="#10c227" onClick={() => setNotification(false)} />
-          </span>
+          </span> */}
         </Styles.CardInformation>
       ) : null}
     </>

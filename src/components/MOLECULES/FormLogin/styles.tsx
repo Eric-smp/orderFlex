@@ -35,6 +35,7 @@ export const ContentForm = styled.div`
         font-style: italic;
         text-decoration: underline;
         color: #551a8b;
+        cursor: pointer;
       }
     }
   }

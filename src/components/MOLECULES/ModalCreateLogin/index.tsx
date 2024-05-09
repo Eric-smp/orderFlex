@@ -90,9 +90,7 @@ export function ModalCreateLogin() {
     }
 
     if (maiuscula && caracterEspecial && contemNumero && quantidade) {
-      setMessageError(true);
-    } else {
-      setMessageError(true);
+      setMessageError(false);
     }
   }, [quantidade, watchPassword]);
   return (

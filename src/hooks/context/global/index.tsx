@@ -22,7 +22,7 @@ export const initialState: TGlobalProps = {
   setIsModalOpen: () => {},
   modalType: 0,
   setModalType: () => {},
-  testeFomr: () => {},
+
   handlePostUser: () => {},
   loginCount: () => {},
   notification: false,
@@ -39,22 +39,6 @@ function GlobalProvider({ children }: ChildrenType) {
   const [notification, setNotification] = useState(false);
 
   console.log("modalType", isModalOpen);
-
-  const testeFomr = useCallback(({ nome, pedido }: TCreateOders) => {
-    const params = {
-      nome,
-      pedido,
-    };
-
-    try {
-      console.log("Aqui está o nome salvo", nome);
-      setIsModalOpen("hidden");
-
-      console.log("aqui está o name", name);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
 
   const handlePostUser = useCallback(
     async ({ name, cnpj, username, password }: TCreateLogin) => {
@@ -75,7 +59,12 @@ function GlobalProvider({ children }: ChildrenType) {
       try {
         await Axios.post(url, params, config);
         setIsModalOpen("hidden");
-        setNotification(true);
+        setTimeout(function () {
+          setNotification(true);
+          setTimeout(function () {
+            setNotification(false);
+          }, 2000);
+        }, 500);
       } catch (error) {
         console.log(error);
       }
@@ -100,6 +89,9 @@ function GlobalProvider({ children }: ChildrenType) {
       await Axios.post(url, params, config);
       route.push("/home");
     } catch (error) {
+      setIsModalOpen("visible");
+      setModalType(2);
+
       console.log("Deu erro");
     }
   }, []);
@@ -111,21 +103,14 @@ function GlobalProvider({ children }: ChildrenType) {
       setIsModalOpen,
       modalType,
       setModalType,
-      testeFomr,
+
       handlePostUser,
       loginCount,
       notification,
       setNotification,
     }),
 
-    [
-      isModalOpen,
-      modalType,
-      testeFomr,
-      handlePostUser,
-      loginCount,
-      notification,
-    ]
+    [isModalOpen, modalType, handlePostUser, loginCount, notification]
   );
 
   return (

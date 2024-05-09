@@ -1,11 +1,10 @@
-import * as Dialog from "@radix-ui/react-dialog";
 import { InputMaterial, Button, MaterialInputMask } from "@/components";
 import * as Styles from "./styles";
 import { useGlobal } from "@/hooks/context/global";
-import { useRouter } from "next/router";
+
 import { useForm } from "react-hook-form";
 import { TLoginCoung } from "@/types";
-import { ChangeEvent, ReactHTML, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { VisibilityOff, Visibility } from "@mui/icons-material";
 
 export function FormLogin() {
@@ -26,7 +25,8 @@ export function FormLogin() {
       watchCNPJ !== "" &&
       watchCNPJ !== undefined &&
       watchSenha !== "" &&
-      watchSenha !== undefined
+      watchSenha !== undefined &&
+      watchSenha.length > 6
     ) {
       setDisabledButton(false);
     } else {

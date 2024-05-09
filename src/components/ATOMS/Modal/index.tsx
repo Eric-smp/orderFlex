@@ -1,6 +1,4 @@
-/* eslint-disable react/jsx-no-undef */
-
-import { ModalCreateLogin, ModalCreateOrders } from "@/components";
+import { ModalCreateLogin, ModalCreateOrders, ModaLError } from "@/components";
 import * as Styles from "./styles";
 import { useGlobal } from "@/hooks/context/global";
 
@@ -10,6 +8,7 @@ export function Modal() {
   const modalsList = [
     <ModalCreateLogin key="0" />,
     <ModalCreateOrders key="1" />,
+    <ModaLError key="2" />,
   ];
 
   return (
