@@ -49,8 +49,6 @@ function GlobalProvider({ children }: ChildrenType) {
   const [produtos, setProdutos] = useState<TCreateOders[]>([]);
   const [notificationOrder, setNotificationOrder] = useState(false);
 
-  console.log("modalType", isModalOpen);
-
   const handlePostUser = useCallback(
     async ({ name, cnpj, username, password }: TCreateLogin) => {
       const url = "./api/CreateUser/loginUser";
@@ -125,13 +123,14 @@ function GlobalProvider({ children }: ChildrenType) {
       try {
         const result = await Axios.post(url, params, config);
         setIsModalOpen("hidden");
+
         setTimeout(function () {
           setNotificationOrder(true);
           setTimeout(function () {
             setNotificationOrder(false);
           }, 2000);
+          window.location.reload();
         }, 500);
-        window.location.reload();
       } catch (error) {
         console.log(error);
       }

@@ -11,6 +11,10 @@ export const WrapperError = styled.div`
   background-color: #fff;
   border-radius: 0.125rem;
 
+  svg {
+    cursor: pointer;
+  }
+
   .ContentError {
     width: 100%;
     display: flex;

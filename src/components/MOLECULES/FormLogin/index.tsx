@@ -87,7 +87,7 @@ export function FormLogin() {
           </p>
         </h3>
       </div>
-      <h3 onClick={() => router.push("/home")}>Próxima página</h3>
+      {/* <h3 onClick={() => router.push("/home")}>Próxima página</h3> */}
     </Styles.ContentForm>
   );
 }

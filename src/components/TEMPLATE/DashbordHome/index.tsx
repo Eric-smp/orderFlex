@@ -1,4 +1,4 @@
-import { Header, BodyHome, Modal } from "@/components";
+import { Header, BodyHome, Modal, NotificationOrder } from "@/components";
 import * as Styles from "./styles";
 
 export function DrashbordHome() {
@@ -7,6 +7,7 @@ export function DrashbordHome() {
       <Modal />
       <Header isNavegation />
       <BodyHome />
+      <NotificationOrder />
     </Styles.Wrapper>
   );
 }

@@ -25,15 +25,16 @@ export function CardOrders() {
   useEffect(() => {
     fetchProdutos();
   }, []);
-  console.log(produtos.map((teste) => teste.nome));
 
   return (
     <Styles.WapperOrder>
       {produtos.map((produto, index) => (
         <Styles.ContentOrder key={index}>
-          <h1>{produto.nome}</h1>
-          <h2>{produto.nomeProduto}</h2>
-          <h3>R$:{produto.preco}</h3>
+          <h1>Cliente: {produto.nome}</h1>
+          <h2>Pedido: {produto.nomeProduto}</h2>
+          <span>
+            <h3>R$: {produto.preco}</h3>
+          </span>
         </Styles.ContentOrder>
       ))}
     </Styles.WapperOrder>

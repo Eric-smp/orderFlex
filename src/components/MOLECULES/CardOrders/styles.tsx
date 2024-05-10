@@ -4,7 +4,7 @@ export const WapperOrder = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1.5rem;
   flex-wrap: wrap;
   padding-bottom: 4rem;
@@ -17,5 +17,10 @@ export const ContentOrder = styled.div`
   padding: 2rem;
   background-color: #f7ad00;
   color: #000;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+
+  h3 {
+    text-align: end;
+    width: 100%;
+  }
 `;

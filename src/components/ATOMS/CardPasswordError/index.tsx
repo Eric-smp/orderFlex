@@ -18,7 +18,7 @@ export function CardPasswordError(props: TCardErro) {
           ) : (
             <Close className="iconError" />
           )}
-          <h4>1 Letra maiusculá</h4>
+          <h4>1 Letra maiúscula</h4>
         </span>
         <span>
           {props.numero ? (
@@ -27,7 +27,7 @@ export function CardPasswordError(props: TCardErro) {
             <Close className="iconError" />
           )}
 
-          <h4>1 Numeró</h4>
+          <h4>1 Número</h4>
         </span>
         <span>
           {props.especial ? (
@@ -45,7 +45,7 @@ export function CardPasswordError(props: TCardErro) {
             <Close className="iconError" />
           )}
 
-          <h4>No minimo 6 caracteres</h4>
+          <h4>No mínimo 6 caracteres</h4>
         </span>
       </ul>
     </Styles.CardPassword>
