@@ -6,12 +6,13 @@ import { useEffect, useState } from "react";
 import { TCreateOders } from "@/types";
 import { useForm } from "react-hook-form";
 export function ModalCreateOrders() {
-  const { setIsModalOpen } = useGlobal();
+  const { setIsModalOpen, handleOrder } = useGlobal();
   const [divCount, setDivCount] = useState(1);
   const [inputValues, setInputValues] = useState([""]);
   const [clientName, setClientName] = useState("");
   const [orders, setOrders] = useState([]);
-  const { testeFomr } = useGlobal();
+  const [disabled, setDisabled] = useState(true);
+
   const {
     register,
     watch,
@@ -20,22 +21,23 @@ export function ModalCreateOrders() {
   } = useForm<TCreateOders>();
 
   const watchNome = watch("nome");
-  const watchPedido = watch("pedido");
+  const watchProduto = watch("nomeProduto");
+  const watchPreco = watch("preco");
 
-  console.log("AQUI ESTÁ O NOME DO LOCAL", watchNome);
-  const handleAddDiv = () => {
-    setDivCount(divCount + 1);
-    setInputValues([...inputValues, ""]);
-  };
-
-  const handleInputChange = (index: any, value: any) => {
-    const newInputValues = [...inputValues];
-    newInputValues[index] = value;
-    setInputValues(newInputValues);
-  };
-  // const handleFinishOrder = (): void => {
-  //   setOrders([...orders, { clientName, items: inputValues }]);
-  // };
+  useEffect(() => {
+    if (
+      watchNome !== "" &&
+      watchNome !== undefined &&
+      watchProduto !== "" &&
+      watchProduto !== undefined &&
+      watchPreco > 0 &&
+      watchPreco !== undefined
+    ) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  }, [watchNome, watchPreco, watchProduto]);
   return (
     <Styles.ContentModal>
       <header>
@@ -48,40 +50,43 @@ export function ModalCreateOrders() {
         </span>
         <h1>Criando pedido</h1>
       </header>
-      <form>
+      <form onSubmit={handleSubmit(handleOrder)}>
         <InputMaterial
+          register={register("nome")}
           placeholder={"Digite o nome do cliente"}
           type={"text"}
-          label={""}
+          label={"Cliente"}
           id={""}
           autoComplete="off"
-          onChange={(e) => setClientName(e.target.value)}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            setClientName(event.target.value)
+          }
         />
-        {[...Array(divCount)].map((_, index) => (
-          <div key={index} className="inputOrder">
-            <InputMaterial
-              placeholder={"Digite o pedido"}
-              type={"string"}
-              label={""}
-              id={""}
-              // value={inputValues[index]}
-              // onChange={(e) => handleInputChange(index, e.target.value)}
-              autoComplete="off"
-            />
-            {index === divCount - 1 && (
-              <span className="addOrder" onClick={handleAddDiv}>
-                +
-              </span>
-            )}
-          </div>
-        ))}
+
+        <InputMaterial
+          register={register("nomeProduto")}
+          placeholder={"Digite o pedido"}
+          type={"text"}
+          label={"Pedido"}
+          id={""}
+          autoComplete={"off"}
+        />
+        <InputMaterial
+          placeholder={"Digite o preço"}
+          type={"text"}
+          label={"Preço"}
+          id={""}
+          autoComplete={"off"}
+          register={register("preco")}
+        />
         <footer>
           <Button
             text={"Finalizar pedido"}
             backgroundColor={"blue"}
             color={"#fff"}
             width="8rem"
-            // type="submit"
+            type="submit"
+            disabled={disabled}
           />
           <Button
             text={"Cancelar Pedido"}

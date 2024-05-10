@@ -1,4 +1,5 @@
 export type TCreateOders = {
     nome:string
-    pedido:string
+    nomeProduto:string
+    preco:number
 }

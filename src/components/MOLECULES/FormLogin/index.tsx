@@ -6,8 +6,10 @@ import { useForm } from "react-hook-form";
 import { TLoginCoung } from "@/types";
 import { useEffect, useState } from "react";
 import { VisibilityOff, Visibility } from "@mui/icons-material";
+import { useRouter } from "next/router";
 
 export function FormLogin() {
+  const router = useRouter();
   const [disabledButton, setDisabledButton] = useState(true);
   const [iconInput, setIconInput] = useState(false);
   const { setIsModalOpen, setModalType, loginCount } = useGlobal();
@@ -85,6 +87,7 @@ export function FormLogin() {
           </p>
         </h3>
       </div>
+      <h3 onClick={() => router.push("/home")}>Próxima página</h3>
     </Styles.ContentForm>
   );
 }

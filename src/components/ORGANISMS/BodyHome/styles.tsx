@@ -12,12 +12,14 @@ export const ContentBody = styled.div`
     margin: auto;
     border-right: 1px solid #f7ad00;
     border-left: 1px solid #f7ad00;
+
+    display: flex;
   }
 
   .saveOrders {
     width: 100%;
     height: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
   }
 `;
